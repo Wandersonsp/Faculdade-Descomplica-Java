@@ -1,0 +1,39 @@
+package P&R_2
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class Main {
+
+    public static void main(String[]args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("Nome do Arquivo: \n");
+        String caminhoArquivo = Scanner.nextline();
+
+            InputStream is = null;
+            OutputStream is = null;
+                try{
+                is = new FileInputStream(caminhoArquivo);
+                    os = new FileOutputStream("copia de:" + caminhoArquivo);
+                    byte[] buffer = new byte[1024];
+                    int length = 0;
+                    while ((length = is.read(buffer)> 0);
+                    {
+                        os.write(buffer,0,length);
+                    }
+                    System.out.println("Cópia Realizada")
+                }
+            catch (Execption e){
+                System.out.printf("Erro na abertura do arquivo: %s.\n",e.getMessage());
+            }   
+        finally{
+            is.close();
+            os.close();
+        }
+    }
+
+}
